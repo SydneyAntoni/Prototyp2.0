@@ -1,12 +1,142 @@
 {{define "main"}}
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <style>
+        body {
+            font-family: "Nunito_Sans", sans-serif;
+        }
+        .container2 {
+            display: flex;
+            text-align: center;
+            flex-direction: column-reverse;
+            background-image: url("/Hintergrund1.png");
+            height: 600px;
+        }
+        .container3 {
+            display: flex;
+            height: 392px;
+        }
+        @media (max-width: 1000px) {
+            .container3 {
+                flex-direction: column;
+                width: 100%;
+            }
+            .container32 {
+                flex-direction: column-reverse;
+                margin: 0px;
+                width:100%;
+            }
+            .containerInnerTitle1 {
+                margin: 0px;
+            }
+        }
+        .container32 {
+            display: flex;
+            height: 392px;
+        }
+        .container4 {
+            display: flex;
+            height: 400px;
+            background: #F7F7F7;
+            flex-direction: column;
+            text-align: center;
+            font-family: "Nunito_Sans", sans-serif;
+            font-style: normal;
+        }
+        .containerTitle1 {
+            background: var(--xapling-gruen-hell, #ECF3DB);
+            width: 50%;
+            text-align: center;
+            color: var(--xapling-gruen, #A2C554);
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 12px;
+        }
+        .containerInnerTitle1 {
+            margin: 120px 0px 0px 30%;
+        }
+        .containerText1 {
+            width: 41%;
+            text-align: left;
+            color: #000;
+            font-family: Nunito Sans;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            position: relative;
+            left: 64px;
+            top: 22%
+        }
+        .centered {
+            width: 60ßpx;
+            position: absolute;
+            text-align: center;
+            top: 390px;;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 75px;
+            font-weight: 900;
+            line-height: 80px;
+            color: white;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-<img src="/img.png" style="width: 3840px; height: 2882px; margin: 0px auto 0px auto;">
+    <div class="container2">
+        <div style=" flex-shrink: 0;">
+            <p class="centered">
+                Herzlich Willkommen bei xapling
+            </p>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="20" fill="none" style="margin-bottom: 10px;">
+                <circle cx="90" cy="10" r="10" fill="white"/>
+                <circle cx="130" cy="10" r="10" fill="white"/>
+                <circle cx="170" cy="10" r="10" fill="white"/>
+                <circle cx="50" cy="10" r="10" fill="white"/>
+                <circle cx="10" cy="10" r="10" fill="#A2C554"/>
+            </svg>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="containerTitle1">
+            <div class="containerInnerTitle1">
+                {{ with .Site.GetPage "/Home_Title1.md" }} {{ .Content }} {{ end }}
+            </div>
+        </div>
+        <div class="containerText1">
+            {{ with .Site.GetPage "/Home_Text1.md" }} {{ .Content }} {{ end }}
+        </div>
+    </div>
+    <div class="container32">
+        <div class="containerText1" style="width: 50%">
+            <div style="margin: 64px 110px 0px 110px;">
+                {{ with .Site.GetPage "/Home_Text2.md" }} {{ .Content }} {{ end }}
+            </div>
+        </div>
+        <div class="containerTitle1" style="background: var(--xapling-blau-hell, #DFF0F2);">
+            <div style="color: var(--xapling-blau, #66B6C1);position: relative; top: 110px; right: 30%;">
+                {{ with .Site.GetPage "/Home_Title2.md" }} {{ .Content }} {{ end }}
+            </div>
+        </div>
+    </div>
+    <div class="container4">
+        <div style="color: var(--xapling-gruen, #A2C554);font-size: 200px; font-weight: 700; line-height: 60px; margin-top: 100px;">
+            “
+        </div>
+        <div style="font-size: 36px; font-weight: 700; line-height: 60px;">
+            Man braucht kein Unternehmen mit 100 Mitarbeitern <br>
+            um eine Idee zu verwirklichen.
+        </div>
+        <div style="font-size: 12px; font-style: italic; font-weight: 400; line-height: 60px;">
+            Larry Page, Mitbegründer von Google
+        </div>
+    </div>
 </body>
 </html>
 {{end}}

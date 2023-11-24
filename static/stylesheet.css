@@ -145,10 +145,10 @@ body {
     flex: 50%;
 }
 .containerInnerText1{
-    margin: 64px 30% 32px 110px;
+    margin: 64px 20% 32px 110px;
 }
 .containerInnerText2{
-    margin: 64px 110px 0px 30%;
+    margin: 64px 110px 0px 20%;
 }
 
 /*Google Zitat*/
@@ -196,8 +196,8 @@ body {
     list-style-type: none;
 }
 
-/*Anpassungen für eine kleinere Browser Größe < 1000px */
-@media screen and (max-width: 1000px){
+/*Anpassungen für eine kleinere Browser Größe < 900px */
+@media screen and (max-width: 1170px){
      .containerColumn1 {
         flex-direction: column;
         height: 700px;

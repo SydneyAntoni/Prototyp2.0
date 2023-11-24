@@ -5,28 +5,22 @@
     <title>Header</title>
 </head>
 <body style="margin: 0px;">
-    <!-- Alles CSS kommt gewöhnlich nicht in den Code. Dafür gibt es eine Extra-Datei. -->
-    <!-- Gerne auch FLOAT vermeiden. Das ist nur umständlich und super easy durch "flexbox" oder "grid" zu ersetzen -->
-    <div style="height: 10px; width: 50%; background-color: #A2C554; float: left;"></div>
-    <div style="height: 10px; width: 50%; background-color: #66B6C1; float: right;"></div>
-    <!-- Wenn du wie hier das Logo verlinken willst, reicht der einfache link-tag. Ein extra Button drum herum ist quasi doppelt gemoppelt. -->
-    <button style="background: rgba(0, 0, 0, 0.0); border: none; postion: fixed; margin: 15px; width; 70px; height: 70px">
-        <a href="http://localhost:1313/" style="width: 70px; height: 70px;">
-            <!-- Du brauchst das img nicht in ein svg packen. Das wäre hier auch doppelt gemoppelt.  -->
+    <div class="grünerBalken"></div>
+    <div class="blauerBalken"></div>
+    <button class="buttonLogo">
+        <a href="http://localhost:1313/" class="buttonLogoLink">
             <!-- Das img kannst du auch in das CSS auslagern. Dadurch wird diese Datei auch schlanker. -->
-            <svg height="70px" width="70">
-                <image xlink:href="xapling-logo.svg" src="xapling-logo.png" height="70px" width="70px"/>
-            </svg>
+            <img src="xapling-logo.svg" alt="xapling-logo" height="70px" width="70px"/>
         </a>
     </button>
-    <!-- Hier nimmst du am besten das passende Tag dafür: nav -->
-    <div class="containerNav">
-        <!-- Die "nav" besteht aus ein ul (unordered list) und den jeweiigen li's (listenpunkte). Versuch das mal umzuändern -->
-        <div class="itemNav"><p style="color: #66B6C1;">xapling</p></div>
-        <div class="itemNav"><p>portfolio</p></div>
-        <div class="itemNav"><p>team</p></div>
-        <div class="itemNav"><p>social</p></div>
-        <div class="itemNav" style="padding-right: 50px;"><p>kontakt</p></div>
-    </div>
+    <nav>
+        <ul class="containerNav">
+            <li class="itemNav"><p style="color: #66B6C1;">xapling</p></li>
+            <li class="itemNav"><p>portfolio</p></li>
+            <li class="itemNav"><p>team</p></li>
+            <li class="itemNav"><p>social</p></li>
+            <li class="itemNav"><p>kontakt</p></li>
+        </ul>
+    </nav>
 </body>
 </html>

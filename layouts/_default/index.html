@@ -4,68 +4,66 @@
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
-<body>
-    <!-- Ich sehe du strukturierst hier, das ist gut! Du musst jetzt aber lernen wie du mit tags Struktur erzeugen kannst. -->
-    <!-- Schau dir dazu mal die tags: main, section, aside und article an und versuch mal die folgenden Teile damit neu zu ordnen -->
-    
+<main>
     <!-- Willkommens Banner -->
-    <div class="containerBanner">
-        <div style=" flex-shrink: 0;">
-            <p class="willkommen">
-                <!-- "<br>" zu benutzen ist keine gute Idee. Versuch alle "<br>" immmer mit Css zu lösen -->
-                Herzlich Willkommen <br>
-                bei xapling
-            </p>
-        </div>
+    <section class="containerBanner">
+        <h1 class="willkommen">
+            bei xapling
+        </h1>
+        <h1 class="willkommen">
+            Herzlich Willkommen
+        </h1>
         <div>
             <!-- Sowas immer auslagern ins CSS. Stört den Lesefluss. -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="20" fill="none" style="margin-bottom: 10px;">
-                <circle cx="90" cy="10" r="10" fill="white"/>
-                <circle cx="130" cy="10" r="10" fill="white"/>
-                <circle cx="170" cy="10" r="10" fill="white"/>
-                <circle cx="50" cy="10" r="10" fill="white"/>
-                <circle cx="10" cy="10" r="10" fill="#A2C554"/>
+            <svg class="circleSVG" xmlns="http://www.w3.org/2000/svg" width="180" height="20">
+                <circle class="circle1"/>
+                <circle class="circle2"/>
+                <circle class="circle3"/>
+                <circle class="circle4"/>
+                <circle class="circle5"/>
             </svg>
         </div>
-    </div>
+    </section>
     <!-- xapling Vorstellung -->
-    <div class="containerColumn1">
-        <div class="containerTitle">
-            <div class="containerInnerTitle1">
+    <section class="containerColumn1">
+        <div class="containerTitle1">
+            <h2 class="containerInnerTitle1">
                 {{ with .Site.GetPage "/Home_Title1.md" }} {{ .Content }} {{ end }}
-            </div>
+            </h2>
         </div>
         <div class="containerText">
-            <div style="margin: 64px 30% 32px 110px;">
+            <article class="containerInnerText1">
                 {{ with .Site.GetPage "/Home_Text1.md" }} {{ .Content }} {{ end }}
-            </div>
+            </article>
         </div>
-    </div>
-    <div class="containerColumn2">
+    </section>
+    <section class="containerColumn2">
         <div class="containerText">
-            <div style="margin: 64px 110px 0px 30%;">
+            <article class="containerInnerText2">
                 {{ with .Site.GetPage "/Home_Text2.md" }} {{ .Content }} {{ end }}
-            </div>
+            </article>
         </div>
-        <div class="containerTitle" style="background: var(--xapling-blau-hell, #DFF0F2);">
-            <div class="containerInnerTitle2">
+        <div class="containerTitle2">
+            <h2 class="containerInnerTitle2">
                 {{ with .Site.GetPage "/Home_Title2.md" }} {{ .Content }} {{ end }}
-            </div>
+            </h2>
         </div>
-    </div>
+    </section>
     <!-- Zitat -->
-    <div class="containerZitat">
-        <div style="color: var(--xapling-gruen, #A2C554);font-size: 200px; font-weight: 700; line-height: 60px; margin-top: 100px;">
+    <section class="zitatSection">
+        <div class="containerMark">
             “
         </div>
-        <div style="font-size: 36px; font-weight: 700; line-height: 60px;">
-            Man braucht kein Unternehmen mit 100 Mitarbeitern <br>
+        <blockquote class="containerZitat">
+            Man braucht kein Unternehmen mit 100 Mitarbeitern
+        </blockquote>
+        <blockquote class="containerZitat">
             um eine Idee zu verwirklichen.
-        </div>
-        <div style="font-size: 12px; font-style: italic; font-weight: 400; line-height: 60px;">
+        </blockquote>
+        <cite class="containerQuelle">
             Larry Page, Mitbegründer von Google
-        </div>
-    </div>
-</body>
+        </cite>
+    </section>
+</main>
 </html>
 {{end}}

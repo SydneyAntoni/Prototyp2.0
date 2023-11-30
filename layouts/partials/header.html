@@ -13,6 +13,9 @@
         </a>
     </button>
     <nav>
+        {{ range (where .Site.RegularPages "Section" "Test") }}
+        <a class="itemNav" href="{{.Permalink}}">{{.Title}}</a>
+        {{end}}
         <ul class="containerNav">
             <li class="itemNav"><p style="color: #66B6C1;">xapling</p></li>
             <li class="itemNav"><p>portfolio</p></li>

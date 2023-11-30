@@ -197,7 +197,7 @@ body {
 }
 
 /*Anpassungen für eine kleinere Browser Größe < 900px */
-@media screen and (max-width: 1170px){
+@media screen and (max-width: 1160px){
      .containerColumn1 {
         flex-direction: column;
         height: 700px;

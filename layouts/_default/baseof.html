@@ -12,7 +12,7 @@
 <body>
     {{partial "header" .}}
     {{block "main".}}
-        this is the default main
+        {{ with .Site.GetPage "/Home_Text2.md" }} {{ .Content }} {{ end }}
     {{end}}
     {{partial "footer" .}}
 </body>

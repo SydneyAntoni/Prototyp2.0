@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Single</title>
-
-    <link style="width:50px;height:50px;" rel="icon" href="/xapling-logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css">
-</head>
+{{define "main"}}
 <body>
-{{partial "header" .}}
-{{block "main".}}
-{{ with .Site.GetPage "/Home_Text2.md" }} {{ .Content }} {{ end }}
-{{end}}
-{{partial "footer" .}}
+        {{ .Content }}
+
 </body>
 </html>
+{{end}}

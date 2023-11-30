@@ -35,7 +35,7 @@ body {
     margin-top: -83px;
     margin-bottom: 30px;
     list-style-type: none;
-    padding-right: 30px
+    padding-right: 50px
 }
 .itemNav {
     color: #A2C554;
@@ -44,6 +44,9 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 /*Willkommens Banner*/

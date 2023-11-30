@@ -13,15 +13,32 @@
         </a>
     </button>
     <nav>
-        {{ range (where .Site.RegularPages "Section" "Test") }}
-        <a class="itemNav" href="{{.Permalink}}">{{.Title}}</a>
-        {{end}}
         <ul class="containerNav">
-            <li class="itemNav"><p style="color: #66B6C1;">xapling</p></li>
-            <li class="itemNav"><p>portfolio</p></li>
-            <li class="itemNav"><p>team</p></li>
-            <li class="itemNav"><p>social</p></li>
-            <li class="itemNav"><p>kontakt</p></li>
+            {{ with .Site.GetPage "/xapling.md" }}
+                <li class="itemNav">
+                    <a class="itemNav" style="color: #66B6C1;" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+            {{ with .Site.GetPage "/portfolio.md" }}
+                <li class="itemNav">
+                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+            {{ with .Site.GetPage "/team.md" }}
+                <li class="itemNav">
+                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+            {{ with .Site.GetPage "/social.md" }}
+                <li class="itemNav">
+                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
+            {{ with .Site.GetPage "/kontakt.md" }}
+                <li class="itemNav">
+                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+            {{ end }}
         </ul>
     </nav>
 </body>

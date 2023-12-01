@@ -1,5 +1,6 @@
 body {
     font-family: "Nunito_Sans", sans-serif;
+    margin: 0px;
 }
 /*Gerne auch FLOAT vermeiden. Das ist nur umständlich und super easy durch "flexbox" oder "grid" zu ersetzen*/
 .grünerBalken {
@@ -198,7 +199,12 @@ body {
     padding: 0px;
     list-style-type: none;
 }
-
+/*Portfolio Seite */
+img[alt="hannover re Logo"] {
+     margin-left: calc(50% - 590px);
+     margin-top: 300px;
+     margin-bottom: 300px;
+}
 /*Anpassungen für eine kleinere Browser Größe < 900px */
 @media screen and (max-width: 1160px){
      .containerColumn1 {

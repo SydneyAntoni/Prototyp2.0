@@ -1,45 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Header</title>
-</head>
-<body style="margin: 0px;">
+<header>
     <div class="grünerBalken"></div>
     <div class="blauerBalken"></div>
     <button class="buttonLogo">
         <a href="http://localhost:1313/" class="buttonLogoLink">
-            <img src="xapling-logo.svg" alt="xapling-logo" width="70px" height="70px">
+            <img src="/xapling-logo.svg" alt="xapling-logo" width="70px" height="70px">
         </a>
     </button>
     <nav>
         <ul class="containerNav">
-            {{ with .Site.GetPage "/xapling.md" }}
-                <li class="itemNav">
-                    <a class="itemNav" style="color: #66B6C1;" href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-            {{ with .Site.GetPage "/portfolio.md" }}
-                <li class="itemNav">
-                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-            {{ with .Site.GetPage "/team.md" }}
-                <li class="itemNav">
-                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-            {{ with .Site.GetPage "/social.md" }}
-                <li class="itemNav">
-                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-            {{ end }}
-            {{ with .Site.GetPage "/kontakt.md" }}
-                <li class="itemNav">
-                    <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
+<!--            Durchläuft alle md Dateien in /content/Test und erstellt für jede Datei einen Link zu einer single Seite-->
+            {{ $currentPage := .Permalink }}
+            {{ range (where .Site.RegularPages "Section" "Subsites") }}
+<!--                Ueberprueft, ob das Element die aktuell angezeigte Seite verlinkt und markiert in diesem Fall das Element blau-->
+                {{ if eq .Permalink $currentPage }}
+                    <li class="itemNav">
+                        <a class="itemNav" style="color: #66B6C1;" href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ else }}
+                    <li class="itemNav">
+                        <a class="itemNav" href="{{ .Permalink }}">{{ .Title }}</a>
+                    </li>
+                {{ end }}
             {{ end }}
         </ul>
     </nav>
-</body>
-</html>
+</header>
